@@ -16,9 +16,11 @@
 Show that $(1-FNR) = \frac{A}{A+C}$.
 
 From the definition of equality of false negative rates, we know that $(1-FNR)$ can be rewritten as 
-$$1-\frac{C}{A+C}$$
+\begin{enumerate}
+\item $$1-\frac{C}{A+C}$$
+\end{enumerate}
 
-Simplifying the above,
+Simplifying 1,
 \begin{align*}
 1-\frac{C}{A+C} &= \frac{1}{1} - \frac{C}{A+C}\\
 &=\frac{1(A+C)}{1(A+C)} - \frac{C}{A+C}\\
@@ -33,9 +35,11 @@ Thus, from the above, $(1-FNR) = \frac{A}{A+C}$. QED.
 Show that $(1-PPV) = \frac{B}{A+B}$.
 
 From the definition of equality of positive predictive value, we know that $(1-PPV)$ can be rewritten as
-$$1-\frac{A}{A+B}$$
+\begin{enumerate}
+\item $$1-\frac{A}{A+B}$$
+\end{enumerate}
 
-Simplifying the above,
+Simplifying 1,
 \begin{align*}
 1-\frac{A}{A+B} &= \frac{1}{1} - \frac{A}{A+B}\\
 &= \frac{1(A+B)}{1(A+B} - \frac{A}{A+B}\\
@@ -50,15 +54,17 @@ Thus, from the above, $(1-PPV) = \frac{B}{A+B}$. QED.
 Show that $\frac{BR}{1-BR} = \frac{A+C}{B+D}$.
 
 From the definition of the base rate of a population, BR can be rewritten as
-$$\frac{A+C}{|P|}$$
+\begin{enumerate}
+\item $$\frac{A+C}{|P|}$$
 
-Substituting the above, $\frac{BR}{1-BR} = \frac{A+C}{B+D}$ becomes
-$$\frac{\frac{A+C}{|P|}}{1-\frac{A+C}{|P|}}$$
+Substituting 1, $\frac{BR}{1-BR} = \frac{A+C}{B+D}$ becomes
+\item $$\frac{\frac{A+C}{|P|}}{1-\frac{A+C}{|P|}}$$
 
-From the definition of $|P|$, the above can be further rewritten as
-$$\frac{\frac{A+C}{A+B+C+D}}{1-\frac{A+C}{A+B+C+D}}$$
+From the definition of $|P|$, 2 can be further rewritten as
+\item $$\frac{\frac{A+C}{A+B+C+D}}{1-\frac{A+C}{A+B+C+D}}$$
+\end{enumerate}
 
-Simplifying the above,
+Simplifying 3,
 \begin{align*}
 \frac{\frac{A+C}{A+B+C+D}}{1-\frac{A+C}{A+B+C+D}} &= \frac{\frac{(A+C)(A+B+C+D)}{A+B+C+D}}{1-\frac{(A+C)(A+B+C+D)}{A+B+C+D}}\\
 &= \frac{A+C}{(A+B+C+D) - (A+C)}\\
@@ -67,11 +73,41 @@ Simplifying the above,
 
 Thus, from the above, $\frac{BR}{1-BR} = \frac{A+C}{B+D}$. QED.
 
-
 \HWproblem
 Using the results from Problems 1, 2, and 3, show that:
 $$FPR = \frac{BR}{1-BR}\times\frac{1-PPV}{PPV}\times(1 -FNR)$$
 .
+From Problem 3, we know $\frac{BR}{1-BR}$ can be rewritten as
+\begin{enumerate}
+\item $$\frac{A+C}{B+D}$$
+
+From Problem 2, we know $(1-PPV)$ can be rewritten as
+\item $$\frac{B}{A+B}$$
+
+From Problem 1, we know $(1-FNR)$ can be rewritten as
+\item $$\frac{A}{A+C}$$
+
+Substituting 1, 2, and 3, $\frac{BR}{1-BR}\times\frac{1-PPV}{PPV}\times(1 -FNR)$ becomes
+\item $$\frac{A+C}{B+D}\times\frac{\frac{B}{A+B}}{\frac{A}{A+B}}\times\frac{A}{A+C}$$
+\end{enumerate}
+
+Simplifying 4,
+\begin{align*}
+\frac{A+C}{B+D}\times\frac{\frac{B}{A+B}}{\frac{A}{A+B}}\times\frac{A}{A+C} &= \frac{A+C}{B+D}\times\frac{\frac{B(A+D)}{A+B}}{\frac{A(A+B)}{A+B}}\times\frac{A}{A+C}\\
+&= \frac{A+C}{B+D}\times\frac{B}{A}\times\frac{A}{A+C}\\
+&= \frac{(A+C)BA}{(B+D)A(A+C)}\\
+&= \frac{BAA+BAC}{(AB+AD)(A+C)}\\
+&= \frac{BAA+BAC}{AAB+AAD+CAB+CAD}\\
+&= \frac{BA(A+C)}{A(AB+AD+CB+CD)}\\
+&= \frac{B(A+C)}{AB+AD+CB+CD}
+&= \frac{B(A+C)}{(A+C)(B+D)}\\
+&= \frac{B}{B+D}
+\end{align*}
+
+From the definition of equality of false positive rates, we know FPR can be rewritten as
+$$\frac{B}{B+D}$$
+
+This is equivalent to the simplified version of $\frac{BR}{1-BR}\times\frac{1-PPV}{PPV}\times(1 -FNR)$, as shown above. Thus, $FPR = \frac{BR}{1-BR}\times\frac{1-PPV}{PPV}\times(1 -FNR)$. QED.
 
 \HWproblem
 The statement from Problem 4 holds for the entire population as well as for each group individually. Suppose that all three fairness notions are satisfied by our hypothesis, i.e. $FPR_1 = FPR_2$, $FNR_1 = FNR_2$, and $PPV_1 = PPV_2$. Further, assume that all of these values, as well as the base rates, are neither 0 nor 1. Show that this implies that the base rates of the groups must be equal.
