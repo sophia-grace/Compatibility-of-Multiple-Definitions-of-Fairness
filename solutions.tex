@@ -142,10 +142,13 @@ Simplifying \eqref{12}, (and keeping in mind that none of these values are 0),
 \begin{align*}
 \frac{BR_1}{1-BR_1}\times\frac{1-g}{g}\times(1 -s) &= \frac{BR_2}{1-BR_2}\times\frac{1-g}{g}\times(1 -s)\\
 \frac{BR_1}{1-BR_1}\times(1 -s) &= \frac{BR_2}{1-BR_2}\times(1 -s)\\
-\frac{BR_1}{1-BR_1} &= \frac{BR_2}{1-BR_2}
+\frac{BR_1}{1-BR_1} &= \frac{BR_2}{1-BR_2}\\
+BR_1(1-BR_2) &= BR_2(1-BR_1)\\
+BR_1 - BR_1BR_2 &= BR_2 - BR_1BR_2\\
+BR_1 &= BR_2
 \end{align*}
 
-Thus, the base rates of the groups must be equal, since $\frac{BR_1}{1-BR_1} = \frac{BR_2}{1-BR_2}$. QED.
+Thus, the base rates of the groups must be equal, since $BR_1 = BR_2$, as shown above. QED.
 
 \HWproblem
 Show that if our hypothesis makes no mistakes (i.e. $B_1 = B_2 = 0$ and $C_1 = C_2 = 0$), all three fairness notions will be satisfied, regardless of the base rates for each group.
