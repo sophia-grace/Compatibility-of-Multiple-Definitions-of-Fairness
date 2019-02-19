@@ -76,7 +76,7 @@ Thus, from the above, $\frac{BR}{1-BR} = \frac{A+C}{B+D}$. QED.
 \HWproblem
 Using the results from Problems 1, 2, and 3, show that:
 $$FPR = \frac{BR}{1-BR}\times\frac{1-PPV}{PPV}\times(1 -FNR)$$
-.
+
 From Problem 3, we know $\frac{BR}{1-BR}$ can be rewritten as
 \begin{enumerate}
 \item $$\frac{A+C}{B+D}$$
@@ -99,7 +99,7 @@ Simplifying 4,
 &= \frac{BAA+BAC}{(AB+AD)(A+C)}\\
 &= \frac{BAA+BAC}{AAB+AAD+CAB+CAD}\\
 &= \frac{BA(A+C)}{A(AB+AD+CB+CD)}\\
-&= \frac{B(A+C)}{AB+AD+CB+CD}
+&= \frac{B(A+C)}{AB+AD+CB+CD}\\
 &= \frac{B(A+C)}{(A+C)(B+D)}\\
 &= \frac{B}{B+D}
 \end{align*}
@@ -111,6 +111,27 @@ This is equivalent to the simplified version of $\frac{BR}{1-BR}\times\frac{1-PP
 
 \HWproblem
 The statement from Problem 4 holds for the entire population as well as for each group individually. Suppose that all three fairness notions are satisfied by our hypothesis, i.e. $FPR_1 = FPR_2$, $FNR_1 = FNR_2$, and $PPV_1 = PPV_2$. Further, assume that all of these values, as well as the base rates, are neither 0 nor 1. Show that this implies that the base rates of the groups must be equal.
+
+From the given, we know that $FPR_1 $= $FPR_2$. From Problem 4, we know this can be rewritten as
+\begin{enumerate}
+\item $$FPR = \frac{BR}{1-BR}\times\frac{1-PPV}{PPV}\times(1 -FNR)$$
+
+From the given, we know that 1 holds for the entire population, as well as for each group individually. Thus, it holds that for groups 1 and 2,
+\item $$\frac{BR_1}{1-BR_1}\times\frac{1-PPV_1}{PPV_1}\times(1 -FNR_1) = \frac{BR_2}{1-BR_2}\times\frac{1-PPV_2}{PPV_2}\times(1 -FNR_2)$$
+
+From the given, we know that $FNR_1$ = $FNR_2$ and that $PPV_1$ = $PPV_2$. Let the variable \textit{s} represent $FNR_1$ and $FNR_2$, since they are equal. Similarly, let the variable \textit{g} represent $PPV_1$ and $PPV_2$ since they are equal. Thus, 2 can be rewritten as
+\item $$\frac{BR_1}{1-BR_1}\times\frac{1-g}{g}\times(1 -s) = \frac{BR_2}{1-BR_2}\times\frac{1-g}{g}\times(1 -s)$$
+\end{enumerate}
+
+Simplifying 3, (and keeping in mind that none of these values are 0),
+\begin{align}
+\frac{BR_1}{1-BR_1}\times\frac{1-g}{g}\times(1 -s) &= \frac{BR_2}{1-BR_2}\times\frac{1-g}{g}\times(1 -s)\\
+\frac{BR_1}{1-BR_1}\times(1 -s) &= \frac{BR_2}{1-BR_2}\times(1 -s)\\
+\frac{BR_1}{1-BR_1} &= \frac{BR_2}{1-BR_2}
+\end{align}
+
+Thus, the base rates of the groups must be equal, since $\frac{BR_1}{1-BR_1} = \frac{BR_2}{1-BR_2}$. QED.
+
 
 \HWproblem
 Show that if our hypothesis makes no mistakes (i.e. $B_1 = B_2 = 0$ and $C_1 = C_2 = 0$), all three fairness notions will be satisfied, regardless of the base rates for each group.
