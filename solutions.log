@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  19 FEB 2019 16:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  19 FEB 2019 17:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -203,13 +203,13 @@ LaTeX Font Info:    ... okay on input line 13.
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 [2] [3] [4] (./solutions.aux) ) 
 Here is how much of TeX's memory you used:
- 1867 strings out of 492649
- 23648 string characters out of 6129622
- 103117 words of memory out of 5000000
- 5769 multiletter control sequences out of 15000+600000
+ 1879 strings out of 492649
+ 23687 string characters out of 6129622
+ 103216 words of memory out of 5000000
+ 5781 multiletter control sequences out of 15000+600000
  9142 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,11n,45p,411b,259s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,11n,45p,411b,212s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pu
@@ -222,7 +222,7 @@ ts/cm/cmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmti10.pfb>
-Output written on solutions.pdf (4 pages, 116158 bytes).
+Output written on solutions.pdf (4 pages, 116958 bytes).
 PDF statistics:
  61 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream
