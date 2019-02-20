@@ -14,7 +14,7 @@
 \HWproblem
 Show that $(1-FNR) = \frac{A}{A+C}$.
 
-From the definition of equality of false negative rates, we know that $(1-FNR)$ can be rewritten as 
+From the definition of FNR, we know that $(1-FNR)$ can be rewritten as 
 \begin{equation}
 \label{1} 1-\frac{C}{A+C}
 \end{equation}
@@ -33,7 +33,7 @@ Thus, from the above, $(1-FNR) = \frac{A}{A+C}$. QED.
 \HWproblem
 Show that $(1-PPV) = \frac{B}{A+B}$.
 
-From the definition of equality of positive predictive value, we know that $(1-PPV)$ can be rewritten as
+From the definition of PPV, we know that $(1-PPV)$ can be rewritten as
 \begin{equation}
 \label{2} 1-\frac{A}{A+B}
 \end{equation}
@@ -41,7 +41,7 @@ From the definition of equality of positive predictive value, we know that $(1-P
 Simplifying \eqref{2},
 \begin{align*}
 1-\frac{A}{A+B} &= \frac{1}{1} - \frac{A}{A+B}\\
-&= \frac{1(A+B)}{1(A+B} - \frac{A}{A+B}\\
+&= \frac{1(A+B)}{1(A+B)} - \frac{A}{A+B}\\
 &= \frac{A+B}{A+B} - \frac{A}{A+B}\\
 &= \frac{A+B - A}{A+B}\\
 &= \frac{B}{A+B}
@@ -52,13 +52,13 @@ Thus, from the above, $(1-PPV) = \frac{B}{A+B}$. QED.
 \HWproblem
 Show that $\frac{BR}{1-BR} = \frac{A+C}{B+D}$.
 
-From the definition of the base rate of a population, BR can be rewritten as
+From the definition of BR, BR can be rewritten as
 
 \begin{equation}
 \label{3} \frac{A+C}{|P|}
 \end{equation}
 
-Substituting \eqref{3}, $\frac{BR}{1-BR} = \frac{A+C}{B+D}$ becomes
+Substituting \eqref{3}, $\frac{BR}{1-BR}$ becomes
 \begin{equation}
 \label{4} \frac{\frac{A+C}{|P|}}{1-\frac{A+C}{|P|}}
 \end{equation}
@@ -68,9 +68,9 @@ From the definition of $|P|$, \eqref{4} can be further rewritten as
 \label{5} \frac{\frac{A+C}{A+B+C+D}}{1-\frac{A+C}{A+B+C+D}}
 \end{equation}
 
-Simplifying 5,
+Simplifying \eqref{5},
 \begin{align*}
-\frac{\frac{A+C}{A+B+C+D}}{1-\frac{A+C}{A+B+C+D}} &= \frac{\frac{(A+C)(A+B+C+D)}{A+B+C+D}}{1-\frac{(A+C)(A+B+C+D)}{A+B+C+D}}\\
+\frac{\frac{A+C}{A+B+C+D}}{1-\frac{A+C}{A+B+C+D}} &= \frac{\frac{(A+C)(A+B+C+D)}{A+B+C+D}}{1(A+B+C+D)-\frac{(A+C)(A+B+C+D)}{A+B+C+D}}\\
 &= \frac{A+C}{(A+B+C+D) - (A+C)}\\
 &= \frac{A+C}{B+D}
 \end{align*}
@@ -91,19 +91,24 @@ From Problem 2, we know $(1-PPV)$ can be rewritten as
 \label{7} \frac{B}{A+B}
 \end{equation}
 
+From the definitionof PPV, we know PPV can be rewritten as
+\begin{equation}
+\label{8} \frac{A}{A+B}
+\end{equation}
+
 From Problem 1, we know $(1-FNR)$ can be rewritten as
 \begin{equation}
 \label{8} \frac{A}{A+C}
 \end{equation}
 
-Substituting \eqref{6}, \eqref{7}, and \eqref{8}, $(\frac{BR}{1-BR})(\frac{1-PPV}{PPV})(1 -FNR)$ becomes
+Substituting \eqref{6}, \eqref{7}, \eqref{8}, and \eqref{9} $(\frac{BR}{1-BR})(\frac{1-PPV}{PPV})(1 -FNR)$ becomes
 \begin{equation}
 \label{9} (\frac{A+C}{B+D})(\frac{\frac{B}{A+B}}{\frac{A}{A+B}})(\frac{A}{A+C})
 \end{equation}
 
 Simplifying \eqref{9},
 \begin{align*}
-(\frac{A+C}{B+D})(\frac{\frac{B}{A+B}}{\frac{A}{A+B}})(\frac{A}{A+C}) &= (\frac{A+C}{B+D})(\frac{\frac{B(A+D)}{A+B}}{\frac{A(A+B)}{A+B}})(\frac{A}{A+C})\\
+(\frac{A+C}{B+D})(\frac{\frac{B}{A+B}}{\frac{A}{A+B}})(\frac{A}{A+C}) &= (\frac{A+C}{B+D})(\frac{\frac{B(A+B)}{A+B}}{\frac{A(A+B)}{A+B}})(\frac{A}{A+C})\\
 &= (\frac{A+C}{B+D})(\frac{B}{A})(\frac{A}{A+C})\\
 &= \frac{(A+C)BA}{(B+D)A(A+C)}\\
 &= \frac{BAA+BAC}{(AB+AD)(A+C)}\\
@@ -114,7 +119,7 @@ Simplifying \eqref{9},
 &= \frac{B}{B+D}
 \end{align*}
 
-From the definition of equality of false positive rates, we know FPR can be rewritten as
+From the definition of FPR, we know FPR can be rewritten as
 $$\frac{B}{B+D}$$
 
 This is equivalent to the simplified version of $(\frac{BR}{1-BR})(\frac{1-PPV}{PPV})(1 -FNR)$, as shown above. Thus, $FPR = (\frac{BR}{1-BR})(\frac{1-PPV}{PPV})(1 -FNR)$. QED.
@@ -122,7 +127,7 @@ This is equivalent to the simplified version of $(\frac{BR}{1-BR})(\frac{1-PPV}{
 \HWproblem
 The statement from Problem 4 holds for the entire population as well as for each group individually. Suppose that all three fairness notions are satisfied by our hypothesis, i.e. $FPR_1 = FPR_2$, $FNR_1 = FNR_2$, and $PPV_1 = PPV_2$. Further, assume that all of these values, as well as the base rates, are neither 0 nor 1. Show that this implies that the base rates of the groups must be equal.
 
-From the given, we know that $FPR_1 $= $FPR_2$. From Problem 4, we know this can be rewritten as
+From the given, we know that $FPR_1  = FPR_2$. From Problem 4, we know FPR can be rewritten as
 \begin{equation}
 \label{10} FPR = (\frac{BR}{1-BR})(\frac{1-PPV}{PPV})(1 -FNR)
 \end{equation}
@@ -132,14 +137,13 @@ From the given, we know that \eqref{10} holds for the entire population, as well
 \label{11} (\frac{BR_1}{1-BR_1})(\frac{1-PPV_1}{PPV_1})(1 -FNR_1) = (\frac{BR_2}{1-BR_2})(\frac{1-PPV_2}{PPV_2})(1 -FNR_2)
 \end{equation}
 
-From the given, we know that $FNR_1$ = $FNR_2$ and that $PPV_1$ = $PPV_2$. Let the variable \textit{s} represent $FNR_1$ and $FNR_2$, since they are equal. Similarly, let the variable \textit{g} represent $PPV_1$ and $PPV_2$ since they are equal. Thus, \eqref{11} can be rewritten as
+From the given, we know that $FNR_1$ = $FNR_2$ and that $PPV_1$ = $PPV_2$. Let the variable \textit{s} represent $FNR_1$ and $FNR_2$, since they are equal. Similarly, let the variable \textit{z} represent $PPV_1$ and $PPV_2$, since they are equal. Thus, \eqref{11} can be rewritten as
 \begin{equation}
-\label{12} (\frac{BR_1}{1-BR_1})(\frac{1-g}{g})(1 -s) = (\frac{BR_2}{1-BR_2})(\frac{1-g}{g})(1 -s)
+\label{12} (\frac{BR_1}{1-BR_1})(\frac{1-z}{z})(1 -s) = (\frac{BR_2}{1-BR_2})(\frac{1-z}{z})(1 -s)
 \end{equation}
 
 Simplifying \eqref{12}, (and keeping in mind that none of these values are 0),
 \begin{align*}
-(\frac{BR_1}{1-BR_1})(\frac{1-g}{g})(1 -s) &= (\frac{BR_2}{1-BR_2})(\frac{1-g}{g})(1 -s)\\
 (\frac{BR_1}{1-BR_1})(1 -s) &= (\frac{BR_2}{1-BR_2})(1 -s)\\
 \frac{BR_1}{1-BR_1} &= \frac{BR_2}{1-BR_2}\\
 BR_1(1-BR_2) &= BR_2(1-BR_1)\\
