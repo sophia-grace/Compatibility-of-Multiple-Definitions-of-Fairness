@@ -6,8 +6,7 @@
 \HWauthor{Sophia Trump}{strump@brynmawr.edu} % Put your name and Penn email on this line
 \HWno{2} % Enter the number of the homework you are working on
 \HWcourse{CIS 399} % Enter the course department and number here
-\HWpartner{Paul Brown} % If your class allows group work, put your partners here
-\HWpartner{Amelia Earhart} % Otherwise, delete or comment these lines 
+\HWpartner{Kennedy Ellison} % If your class allows group work, put your partners here
 \usepackage{amsmath}
 
 \begin{document}
@@ -80,7 +79,7 @@ Thus, from the above, $\frac{BR}{1-BR} = \frac{A+C}{B+D}$. QED.
 
 \HWproblem
 Using the results from Problems 1, 2, and 3, show that:
-$$FPR = \frac{BR}{1-BR}\times\frac{1-PPV}{PPV}\times(1 -FNR)$$
+$$FPR = (\frac{BR}{1-BR})(\frac{1-PPV}{PPV})(1 -FNR)$$
 
 From Problem 3, we know $\frac{BR}{1-BR}$ can be rewritten as
 \begin{equation}
@@ -97,15 +96,15 @@ From Problem 1, we know $(1-FNR)$ can be rewritten as
 \label{8} \frac{A}{A+C}
 \end{equation}
 
-Substituting \eqref{6}, \eqref{7}, and \eqref{8}, $\frac{BR}{1-BR}\times\frac{1-PPV}{PPV}\times(1 -FNR)$ becomes
+Substituting \eqref{6}, \eqref{7}, and \eqref{8}, $(\frac{BR}{1-BR})(\frac{1-PPV}{PPV})(1 -FNR)$ becomes
 \begin{equation}
-\label{9} \frac{A+C}{B+D}\times\frac{\frac{B}{A+B}}{\frac{A}{A+B}}\times\frac{A}{A+C}
+\label{9} (\frac{A+C}{B+D})(\frac{\frac{B}{A+B}}{\frac{A}{A+B}})(\frac{A}{A+C})
 \end{equation}
 
 Simplifying \eqref{9},
 \begin{align*}
-\frac{A+C}{B+D}\times\frac{\frac{B}{A+B}}{\frac{A}{A+B}}\times\frac{A}{A+C} &= \frac{A+C}{B+D}\times\frac{\frac{B(A+D)}{A+B}}{\frac{A(A+B)}{A+B}}\times\frac{A}{A+C}\\
-&= \frac{A+C}{B+D}\times\frac{B}{A}\times\frac{A}{A+C}\\
+(\frac{A+C}{B+D})(\frac{\frac{B}{A+B}}{\frac{A}{A+B}})(\frac{A}{A+C}) &= (\frac{A+C}{B+D})(\frac{\frac{B(A+D)}{A+B}}{\frac{A(A+B)}{A+B}})(\frac{A}{A+C})\\
+&= (\frac{A+C}{B+D})(\frac{B}{A})(\frac{A}{A+C})\\
 &= \frac{(A+C)BA}{(B+D)A(A+C)}\\
 &= \frac{BAA+BAC}{(AB+AD)(A+C)}\\
 &= \frac{BAA+BAC}{AAB+AAD+CAB+CAD}\\
@@ -118,30 +117,30 @@ Simplifying \eqref{9},
 From the definition of equality of false positive rates, we know FPR can be rewritten as
 $$\frac{B}{B+D}$$
 
-This is equivalent to the simplified version of $\frac{BR}{1-BR}\times\frac{1-PPV}{PPV}\times(1 -FNR)$, as shown above. Thus, $FPR = \frac{BR}{1-BR}\times\frac{1-PPV}{PPV}\times(1 -FNR)$. QED.
+This is equivalent to the simplified version of $(\frac{BR}{1-BR})(\frac{1-PPV}{PPV})(1 -FNR)$, as shown above. Thus, $FPR = (\frac{BR}{1-BR})(\frac{1-PPV}{PPV})(1 -FNR)$. QED.
 
 \HWproblem
 The statement from Problem 4 holds for the entire population as well as for each group individually. Suppose that all three fairness notions are satisfied by our hypothesis, i.e. $FPR_1 = FPR_2$, $FNR_1 = FNR_2$, and $PPV_1 = PPV_2$. Further, assume that all of these values, as well as the base rates, are neither 0 nor 1. Show that this implies that the base rates of the groups must be equal.
 
 From the given, we know that $FPR_1 $= $FPR_2$. From Problem 4, we know this can be rewritten as
 \begin{equation}
-\label{10} FPR = \frac{BR}{1-BR}\times\frac{1-PPV}{PPV}\times(1 -FNR)
+\label{10} FPR = (\frac{BR}{1-BR})(\frac{1-PPV}{PPV})(1 -FNR)
 \end{equation}
 
 From the given, we know that \eqref{10} holds for the entire population, as well as for each group individually. Thus, it holds that for groups 1 and 2,
 \begin{equation}
-\label{11} \frac{BR_1}{1-BR_1}\times\frac{1-PPV_1}{PPV_1}\times(1 -FNR_1) = \frac{BR_2}{1-BR_2}\times\frac{1-PPV_2}{PPV_2}\times(1 -FNR_2)
+\label{11} (\frac{BR_1}{1-BR_1})(\frac{1-PPV_1}{PPV_1})(1 -FNR_1) = (\frac{BR_2}{1-BR_2})(\frac{1-PPV_2}{PPV_2})(1 -FNR_2)
 \end{equation}
 
 From the given, we know that $FNR_1$ = $FNR_2$ and that $PPV_1$ = $PPV_2$. Let the variable \textit{s} represent $FNR_1$ and $FNR_2$, since they are equal. Similarly, let the variable \textit{g} represent $PPV_1$ and $PPV_2$ since they are equal. Thus, \eqref{11} can be rewritten as
 \begin{equation}
-\label{12} \frac{BR_1}{1-BR_1}\times\frac{1-g}{g}\times(1 -s) = \frac{BR_2}{1-BR_2}\times\frac{1-g}{g}\times(1 -s)
+\label{12} (\frac{BR_1}{1-BR_1})(\frac{1-g}{g})(1 -s) = (\frac{BR_2}{1-BR_2})(\frac{1-g}{g})(1 -s)
 \end{equation}
 
 Simplifying \eqref{12}, (and keeping in mind that none of these values are 0),
 \begin{align*}
-\frac{BR_1}{1-BR_1}\times\frac{1-g}{g}\times(1 -s) &= \frac{BR_2}{1-BR_2}\times\frac{1-g}{g}\times(1 -s)\\
-\frac{BR_1}{1-BR_1}\times(1 -s) &= \frac{BR_2}{1-BR_2}\times(1 -s)\\
+(\frac{BR_1}{1-BR_1})(\frac{1-g}{g})(1 -s) &= (\frac{BR_2}{1-BR_2})(\frac{1-g}{g})(1 -s)\\
+(\frac{BR_1}{1-BR_1})(1 -s) &= (\frac{BR_2}{1-BR_2})(1 -s)\\
 \frac{BR_1}{1-BR_1} &= \frac{BR_2}{1-BR_2}\\
 BR_1(1-BR_2) &= BR_2(1-BR_1)\\
 BR_1 - BR_1BR_2 &= BR_2 - BR_1BR_2\\
@@ -153,4 +152,66 @@ Thus, the base rates of the groups must be equal, since $BR_1 = BR_2$, as shown 
 \HWproblem
 Show that if our hypothesis makes no mistakes (i.e. $B_1 = B_2 = 0$ and $C_1 = C_2 = 0$), all three fairness notions will be satisfied, regardless of the base rates for each group.
 
+We must show that $FPR_1 = FPR_2$, $FNR_1 = FNR_2$, and $PPV_1 = PPV_2$, regardless of base rates.
+
+\begin{enumerate}
+\item Proof that $FPR_1 = FPR_2$:
+From the definition of FPR, we know that FPR for groups 1 and 2 respectively can be rewritten as
+\begin{equation}
+\label{13} \frac{B_1}{B_1 + D_1}
+\end{equation}
+\begin{equation}
+\label{14} \frac{B_2}{B_2 + D_2}
+\end{equation}
+
+From the given, we know that $B_1 = B_2 = 0$. Hence, \eqref{13} and \eqref{14} can be rewritten respectively as
+\begin{equation}
+\label{15} \frac{0}{0 + D_1}
+\end{equation}
+\begin{equation}
+\label{16} \frac{0}{0 + D_2}
+\end{equation}
+
+However, both \eqref{15} and \eqref{16} simplify to $0$. Thus, $FPR_1 = 0$ and $FPR_2 = 0$, and $FPR_1 = FPR_2$. QED.
+
+\item Proof that $FNR_1 = FNR_2$:
+From the definition of FNR, we know that FNR for groups 1 and 2 respectively can be rewritten as
+\begin{equation}
+\label{17} \frac{C_1}{A_1 + C_1}
+\end{equation}
+\begin{equation}
+\label{18} \frac{C_2}{A_2 + C_2}
+\end{equation}
+
+From the given, we know that $C_1 = C_2 = 0$. Hence, \eqref{17} and \eqref{18} can be rewritten respectively as
+\begin{equation}
+\label{19} \frac{0}{A_1 + 0}
+\end{equation}
+\begin{equation}
+\label{20} \frac{0}{A_2 + 0}
+\end{equation}
+
+However, both \eqref{19} and \eqref{20} simplify to $0$. Thus, $FNR_1 = 0$ and $FNR_2 = 0$, and $FNR_1 = FNR_2$. QED.
+
+\item Proof that $PPV_1 = PPV_2$:
+From the definition of PPV, we know that PPV for groups 1 and 2 respectively can be rewritten as
+\begin{equation}
+\label{21} \frac{A_1}{A_1 + B_1}
+\end{equation}
+\begin{equation}
+\label{22} \frac{A_2}{A_2 + B_2}
+\end{equation}
+
+From the given, we know that $B_1 = B_2 = 0$. Hence, \eqref{21} and \eqref{22} can be rewritten respectively as
+\begin{equation}
+\label{23} \frac{A_1}{A_1 + 0}
+\end{equation}
+\begin{equation}
+\label{24} \frac{A_2}{A_2 + 0}
+\end{equation}
+
+However, both \eqref{23} and \eqref{24} simplify to $1$. Thus, $PPV_1 = 1$ and $PPV_2 = 1$, and $PPV_1 = PPV_2$. QED.
+
+From parts 1, 2, and 3, it is shown that all three fairness notions are satisfied, regardless of base rates. QED.
+\end{enumerate}
 \end{document}
